@@ -37,7 +37,7 @@ public class TwoSum {
             }
         }
 
-        System.out.println("Indices of the two numbers such that they add up to " + target + " : " + Arrays.toString(k));
+        System.out.println(" Indices of the two numbers such that they add up to " + target + " : " + Arrays.toString(k));
 
     }
 }
