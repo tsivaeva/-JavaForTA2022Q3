@@ -2,25 +2,33 @@ package com.epam.tatiana_sivaeva.java.lesson3;
 
 public abstract class Vehicle {
 
-    private final String licensePlate;
-    private final String colore;
-    private final Integer passengers;
-    private final Integer yearOfManufacture;
+    public String getName() {
+        return name;
+    }
+
+    public String name;
+    public String licensePlate;
+    public Color color;
+    public Integer passengers;
+    public Integer yearOfManufacture;
 
 
-    protected Vehicle(String licensePlate, String colore, Integer passengers, Integer yearOfManufacture) {
+    protected Vehicle(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture) {
+        this.name = name;
         this.licensePlate = licensePlate;
-        this.colore = colore;
+        this.color = color;
         this.passengers = passengers;
         this.yearOfManufacture = yearOfManufacture;
     }
+
+    public abstract void honk();
 
     public String getLicensePlate() {
         return licensePlate;
     }
 
-    public String getColore() {
-        return colore;
+    public Color getColor() {
+        return color;
     }
 
     public Integer getPassengers() {
@@ -31,12 +39,17 @@ public abstract class Vehicle {
         return yearOfManufacture;
     }
 
-    public String toString() {
-        return "Vehicle {" +
-                "licensePlate = " + licensePlate +
-                ", yearOfManufacture = " + yearOfManufacture +
-                ", passengers = " + passengers +
-                "}" + "\n";
-    }
+    public enum Color {YELLOW, RED, GREEN, BLUE, GRAY, CYAN, BLACK, MAGENTA}
 
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", licensePlate='" + licensePlate + '\'' +
+                ", colore='" + color + '\'' +
+                ", passengers=" + passengers +
+                ", yearOfManufacture=" + yearOfManufacture +
+                '}';
+    }
 }
