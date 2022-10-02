@@ -1,16 +1,24 @@
 package com.epam.tatiana_sivaeva.java.lesson3.vehicle;
 
-import com.epam.tatiana_sivaeva.java.lesson3.Vehicle;
-
 // CargoPlane - Грузовой самолет
 
-public class CargoPlane extends Vehicle {
-    public CargoPlane(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture) {
-        super(name, licensePlate, color, passengers, yearOfManufacture);
+import com.epam.tatiana_sivaeva.java.lesson3.Vehicle;
+import com.epam.tatiana_sivaeva.java.lesson3.VehicleStateInterface;
+
+public class CargoPlane extends Vehicle implements VehicleStateInterface {
+    public CargoPlane(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture, VehicleState vehicleState) {
+        super(name, licensePlate, color, passengers, yearOfManufacture, vehicleState);
     }
 
     @Override
     public void honk() {
-        System.out.println("CargoPlane: uiiuiiiuiiiu");
+        System.out.println("CargoPlane honk: uiiuiiiuiiiu");
+    }
+
+
+    @Override
+    public void changeVehicleState() {
+        setVehicleState(VehicleState.FLIGHT);
+        System.out.println("CargoPlane is FLIGHT.");
     }
 }
