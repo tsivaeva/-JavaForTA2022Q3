@@ -21,4 +21,9 @@ public class CargoPlane extends Vehicle implements VehicleStateInterface {
         setVehicleState(VehicleState.FLIGHT);
         System.out.println("CargoPlane is FLIGHT.");
     }
+    class InnerCargoPlane{
+        void display(){
+           // System.out.println("InnerCargoPlane" + Vehicle);
+        }
+    }
 }

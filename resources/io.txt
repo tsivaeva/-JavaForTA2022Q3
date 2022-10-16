@@ -1,0 +1,7 @@
+[Vehicle{name='CargoPlane: Rhinoceros beetle', licensePlate='C1111B', colore='BLUE', passengers=120, yearOfManufacture=1990, vehicleState=REPAIR}
+, Vehicle{name='CargoPlane: Scarab beetle', licensePlate='C2222B', colore='BLACK', passengers=100, yearOfManufacture=1950, vehicleState=REPAIR}
+, Vehicle{name='PassengerPlane: GO home', licensePlate='P111P', colore='YELLOW', passengers=200, yearOfManufacture=2010, vehicleState=REPAIR}
+, Vehicle{name='PassengerPlane: GO home2', licensePlate='P222P', colore='MAGENTA', passengers=200, yearOfManufacture=2011, vehicleState=REPAIR}
+, Vehicle{name='LifeSavingPlane: Vgiik', licensePlate='L111M', colore='RED', passengers=10, yearOfManufacture=2000, vehicleState=REPAIR}
+, Vehicle{name='LifeSavingPlane: Speed', licensePlate='L222M', colore='RED', passengers=8, yearOfManufacture=2001, vehicleState=REPAIR}
+]

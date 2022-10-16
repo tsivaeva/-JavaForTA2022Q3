@@ -54,7 +54,6 @@ public abstract class Vehicle {
 
     public enum VehicleState {REPAIR, FLIGHT, PARKING}
 
-
     @Override
     public String toString() {
         return "Vehicle{" +
@@ -64,6 +63,6 @@ public abstract class Vehicle {
                 ", passengers=" + passengers +
                 ", yearOfManufacture=" + yearOfManufacture +
                 ", vehicleState=" + vehicleState +
-                '}';
+                '}' + '\n';
     }
 }
