@@ -3,6 +3,7 @@ package com.epam.tatiana_sivaeva.java.lesson3.vehicle;
 // CargoPlane - Грузовой самолет
 
 import com.epam.tatiana_sivaeva.java.lesson3.Vehicle;
+import com.epam.tatiana_sivaeva.java.lesson3.VehiclePark;
 import com.epam.tatiana_sivaeva.java.lesson3.VehicleStateInterface;
 
 public class CargoPlane extends Vehicle implements VehicleStateInterface {
