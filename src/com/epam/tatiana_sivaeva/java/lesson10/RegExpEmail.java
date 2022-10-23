@@ -13,5 +13,7 @@ package com.epam.tatiana_sivaeva.java.lesson10;
 
 
 public class RegExpEmail {
-    public static final String regularExpressionEmail = "^[a-zA-Z][a-zA-Z_0-9!#$%&'*+/=?^`{|-]+@[a-zA-Z]+\\.[a-zA-Z]{2,3}";
+    public static final String REG_EXPRESSION_EMAIL = "^[a-zA-Z][a-zA-Z_0-9!#$%&'*+/=?^`{|-]+@[a-zA-Z]+\\.[a-zA-Z]{2,3}";
+
 }
+
