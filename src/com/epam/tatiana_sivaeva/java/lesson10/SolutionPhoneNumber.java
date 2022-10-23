@@ -6,7 +6,10 @@ public class SolutionPhoneNumber {
     private static final Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         System.out.println("Could you please enter the User Phone Number");
+=======
+>>>>>>> origin/lessons10Annotations
         String userPhoneNumber = scan.next();
         if (userPhoneNumber.matches(RegExpPhoneNumber.REG_EXPRESSION_PHONE_NUMBER)) {
             System.out.println("Valid PhoneNumber ");
