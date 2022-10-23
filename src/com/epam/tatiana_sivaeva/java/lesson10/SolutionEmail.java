@@ -7,7 +7,7 @@ public class SolutionEmail {
 
     public static void main(String[] args) {
         String userEmail = scan.next();
-        if (userEmail.matches(RegExpEmail.regularExpressionEmail)) {
+        if (userEmail.matches(RegExpEmail.REG_EXPRESSION_EMAIL)) {
             System.out.println("Valid email ");
         } else {
             System.out.println("Invalid email, it can be includes:\n" +
