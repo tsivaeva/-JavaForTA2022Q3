@@ -11,6 +11,9 @@ package com.epam.tatiana_sivaeva.java.lesson3;
 
 
 import com.epam.tatiana_sivaeva.java.lesson3.exception.InvalidAException;
+import com.epam.tatiana_sivaeva.java.lesson3.menu_options.EnterVehicleMenu;
+import com.epam.tatiana_sivaeva.java.lesson3.menu_options.RemoveVehicleMenu;
+import com.epam.tatiana_sivaeva.java.lesson3.menu_options.UpdateVehicleMenu;
 
 import java.io.*;
 
@@ -24,11 +27,15 @@ public class Menu {
         try {
             int a;
             String vehicleParkToString = vehiclePark.getvehiclesPark().toString();
-            System.out.print("Menu has 3 options '\n'"
-                    + "Enter the number for one of them: '\n'"
-                    + "1 is Save a new object to a file '\n'"
-                    + "2 is Read all the objects from file and show them in console '\n'"
-                    + "3 is Quit" + "\n");
+            System.out.print("Menu has 3 options \n"
+                    + "Enter the number for one of them: \n"
+                    + "1 is Save a new object to a file \n"
+                    + "2 is Read all the objects from file and show them in console \n"
+                    + "3 is Add new object to collection \n"
+                    + "4 is Remove an object from collection \n"
+                    + "5 is Read all objects from collection \n"
+                    + "6 is Update an object from collection \n"
+                    + "7 is Quit" + "\n");
 
             a = Integer.parseInt(br.readLine());
 
@@ -48,10 +55,22 @@ public class Menu {
                 }
 
             } else if (a == 3) {
+                EnterVehicleMenu.main();
+
+            } else if (a == 4) {
+                RemoveVehicleMenu.main();
+
+            } else if (a == 5) {
+                System.out.println("All objects from collection \n" + vehiclePark.vehiclesParkList);
+
+            } else if (a == 6) {
+                UpdateVehicleMenu.main();
+
+            } else if (a == 7) {
                 System.exit(0);
+
             } else {
                 throw new InvalidAException("Incorrect value ");
-
             }
 
         } catch (IOException e) {

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VehiclePark {
-    public List<Vehicle> vehiclesPark;
+    public List<Vehicle> vehiclesParkList;
 
     public VehiclePark() {
-        vehiclesPark = new ArrayList<>();
+        vehiclesParkList = new ArrayList<>();
 
         CargoPlane cargoPlane1 = new CargoPlane("CargoPlane: Rhinoceros beetle", "C1111B", Vehicle.Color.BLUE, 120, 1990, Vehicle.VehicleState.REPAIR);
         CargoPlane cargoPlane2 = new CargoPlane("CargoPlane: Scarab beetle", "C2222B", Vehicle.Color.BLACK, 100, 1950, Vehicle.VehicleState.REPAIR);
@@ -22,21 +22,20 @@ public class VehiclePark {
         PassengerPlane passengerPlane1 = new PassengerPlane("PassengerPlane: GO home", "P111P", Vehicle.Color.YELLOW, 200, 2010, Vehicle.VehicleState.REPAIR);
         PassengerPlane passengerPlane2 = new PassengerPlane("PassengerPlane: GO home2", "P222P", Vehicle.Color.MAGENTA, 200, 2011, Vehicle.VehicleState.REPAIR);
 
-        passengerPlane2.changeVehicleState();
-        lifeSavingPlane2.changeVehicleState();
-        cargoPlane2.changeVehicleState();
-
-        vehiclesPark.add(cargoPlane1);
-        vehiclesPark.add(cargoPlane2);
-        vehiclesPark.add(passengerPlane1);
-        vehiclesPark.add(passengerPlane2);
-        vehiclesPark.add(lifeSavingPlane1);
-        vehiclesPark.add(lifeSavingPlane2);
+        vehiclesParkList.add(cargoPlane1);
+        vehiclesParkList.add(cargoPlane2);
+        vehiclesParkList.add(passengerPlane1);
+        vehiclesParkList.add(passengerPlane2);
+        vehiclesParkList.add(lifeSavingPlane1);
+        vehiclesParkList.add(lifeSavingPlane2);
 
     }
 
     public List<Vehicle> getvehiclesPark() {
-        return vehiclesPark;
+        return vehiclesParkList;
     }
 
+    public void setVehiclesParkList(List<Vehicle> vehiclesParkList) {
+        this.vehiclesParkList = vehiclesParkList;
+    }
 }
