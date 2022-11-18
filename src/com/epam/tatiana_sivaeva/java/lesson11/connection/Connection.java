@@ -17,11 +17,12 @@ public class Connection {
 
         List<Vehicle> vehicles1 = new ArrayList<>();
 
-        try (Statement statement = Connection.getConnection().createStatement()){
+        try (Statement statement = Connection.getConnection().createStatement()) {
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM test_db.cargo_plane");
 
-//            while (resultSet.next()){
+            while (resultSet.next()){
+                System.out.println(resultSet.getString(1));
 //                vehicles1.get(new Vehicle(
 //                      //  resultSet.getInt(1),
 //                        resultSet.getString(2).trim(),
@@ -35,18 +36,19 @@ public class Connection {
 //
 //                    }
 //                });
-//            }
+            }
             System.out.println("tadam");
 
 
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.err.println("Exeption during the statement execution");
         }
         Connection.close();
     }
+
     private static void registerDriver() {
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.err.println("Driver is not found");
         }
@@ -54,9 +56,12 @@ public class Connection {
     }
 
     private static java.sql.Connection create() {
+        String url = "jdbc:mysql://localhost:3306";
+        String uname = "root";
+        String password = "Password_123";
         registerDriver();
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost;username=root;password=Password_123;ssl=false;");
+            conn = DriverManager.getConnection(url, uname, password); //ssl=false;
             System.out.println("We are connected");
         } catch (SQLException e) {
             System.err.println("Connection is not established");

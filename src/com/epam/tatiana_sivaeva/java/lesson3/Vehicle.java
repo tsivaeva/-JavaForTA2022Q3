@@ -32,7 +32,7 @@ public abstract class Vehicle {
         this.vehicleState = vehicleState;
     }
 
-    public abstract void honk();
+   // public abstract void honk();
 
     public String getLicensePlate() {
         return licensePlate;
