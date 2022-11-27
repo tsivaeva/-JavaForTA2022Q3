@@ -1,5 +1,7 @@
 package com.epam.tatiana_sivaeva.java.lesson3;
 
+import java.util.Objects;
+
 public abstract class Vehicle {
 
     private String name;
@@ -31,6 +33,23 @@ public abstract class Vehicle {
     public void setVehicleState(VehicleState vehicleState) {
         this.vehicleState = vehicleState;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setPassengers(Integer passengers) {
+        this.passengers = passengers;
+    }
+
 
     public abstract void honk();
 
@@ -64,6 +83,22 @@ public abstract class Vehicle {
                 ", passengers=" + passengers +
                 ", yearOfManufacture=" + yearOfManufacture +
                 ", vehicleState=" + vehicleState +
-                '}'+'\n';
+                '}' + '\n';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Vehicle)) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return getName().equals(vehicle.getName()) && getLicensePlate().equals(vehicle.getLicensePlate()) &&
+                getColor() == vehicle.getColor() && getPassengers().equals(vehicle.getPassengers()) &&
+                getYearOfManufacture().equals(vehicle.getYearOfManufacture()) &&
+                getVehicleState() == vehicle.getVehicleState();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPassengers(), getYearOfManufacture());
     }
 }
