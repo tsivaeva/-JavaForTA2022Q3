@@ -9,14 +9,17 @@ public abstract class Vehicle {
     private final Integer yearOfManufacture;
     private VehicleState vehicleState;
 
+    private String vehicleType;
 
-    protected Vehicle(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture, VehicleState vehicleState) {
+
+    protected Vehicle(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture, VehicleState vehicleState,String vehicleType) {
         this.name = name;
         this.licensePlate = licensePlate;
         this.color = color;
         this.passengers = passengers;
         this.yearOfManufacture = yearOfManufacture;
         this.vehicleState = vehicleState;
+        this.vehicleType = vehicleType;
 
     }
 
@@ -64,6 +67,7 @@ public abstract class Vehicle {
                 ", passengers=" + passengers +
                 ", yearOfManufacture=" + yearOfManufacture +
                 ", vehicleState=" + vehicleState +
+                ", vehicleType=" + vehicleType +
                 '}'+'\n';
     }
 }

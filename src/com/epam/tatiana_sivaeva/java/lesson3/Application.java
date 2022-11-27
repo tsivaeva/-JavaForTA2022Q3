@@ -7,9 +7,6 @@ public class Application {
         String vehicleParkToString = vehiclePark.getvehiclesPark().toString();
         System.out.println(vehicleParkToString);
 
-        int n = vehiclePark.getvehiclesPark().size();
-        for (int i = 0; i < n; i++)
-            vehiclePark.getvehiclesPark().get(i).honk();
     }
 }
 
