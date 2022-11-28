@@ -7,7 +7,7 @@ import com.epam.tatiana_sivaeva.java.lesson3.VehicleStateInterface;
 
 public class PassengerPlane extends Vehicle implements VehicleStateInterface {
 
-    public PassengerPlane(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture, VehicleState vehicleState, String vehicleType) {
+    public PassengerPlane(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture, VehicleState vehicleState, Integer vehicleType) {
         super(name, licensePlate, color, passengers, yearOfManufacture, vehicleState, vehicleType);
     }
 

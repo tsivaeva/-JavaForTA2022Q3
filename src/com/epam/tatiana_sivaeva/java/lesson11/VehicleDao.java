@@ -4,7 +4,7 @@ import com.epam.tatiana_sivaeva.java.lesson11.connection.Connection;
 import com.epam.tatiana_sivaeva.java.lesson3.Vehicle;
 import com.epam.tatiana_sivaeva.java.lesson3.VehiclePark;
 import com.epam.tatiana_sivaeva.java.lesson3.vehicle.CargoPlane;
-import com.epam.tatiana_sivaeva.java.lesson3.vehicle.LifeSavingPlane;
+import com.epam.tatiana_sivaeva.java.lesson11.VehicleParkDB;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,7 +34,7 @@ public class VehicleDao implements Dao {
                         resultSet.getInt(5),
                         resultSet.getInt(6),
                         Enum.valueOf(Vehicle.VehicleState.class, resultSet.getString(7).trim()),
-                        resultSet.getString(8).trim());
+                        resultSet.getInt(8));
             }
             resultSet.close();
 
@@ -66,7 +66,7 @@ public class VehicleDao implements Dao {
                         resultSet.getInt(5),
                         resultSet.getInt(6),
                         Enum.valueOf(Vehicle.VehicleState.class, resultSet.getString(7).trim()),
-                        resultSet.getString(8).trim());
+                        resultSet.getInt(8));
             }
             resultSet.close();
 
@@ -83,7 +83,6 @@ public class VehicleDao implements Dao {
         List<VehicleParkDB> vehicleParkDBList = new ArrayList<>();
 
         String sql = "SELECT * FROM test_db.vehicle_list";
-        //  String sql1 = "SELECT * FROM test_db.life_saving_plane";
 
         try (Statement statement = Connection.getConnection().createStatement()) {
 
@@ -97,7 +96,7 @@ public class VehicleDao implements Dao {
                         resultSet.getInt(5),
                         resultSet.getInt(6),
                         Enum.valueOf(Vehicle.VehicleState.class, resultSet.getString(7).trim()),
-                        resultSet.getString(8).trim()));
+                        resultSet.getInt(8)));
             }
             resultSet.close();
 
@@ -114,18 +113,19 @@ public class VehicleDao implements Dao {
 
     }
 
-    public void add(CargoPlane cargoPlane) {
-        String sql = "INSERT INTO test_db.cargo_plane (idcargo_plane,name,licensePlate,color," +
-                "passengers,yearOfManufacture,vehicleState) VALUES(?,?,?,?,?,?,?)";
+    public void add(VehicleParkDB vehicleParkDB) {
+        String sql = "INSERT INTO test_db.vehicle_list  (id_vehicle_list,name,licensePlate,color," +
+                "passengers,yearOfManufacture,vehicleState,vehicleType_fk) VALUES(default,?,?,?,?,?,?,?)";
 
         try (PreparedStatement preparedStatement = Connection.getConnection().prepareStatement(sql)) {
 
-            preparedStatement.setString(2, cargoPlane.getName());
-            preparedStatement.setString(3, cargoPlane.getLicensePlate());
-            preparedStatement.setString(4, String.valueOf(cargoPlane.getColor()));
-            preparedStatement.setInt(5, cargoPlane.getPassengers());
-            preparedStatement.setInt(6, cargoPlane.getYearOfManufacture());
-            preparedStatement.setString(7, String.valueOf(cargoPlane.getVehicleState()));
+            preparedStatement.setString(2, vehicleParkDB.getName());
+            preparedStatement.setString(3, vehicleParkDB.getLicensePlate());
+            preparedStatement.setString(4, String.valueOf(vehicleParkDB.getColor()));
+            preparedStatement.setInt(5, vehicleParkDB.getPassengers());
+            preparedStatement.setInt(6, vehicleParkDB.getYearOfManufacture());
+            preparedStatement.setString(7, String.valueOf(vehicleParkDB.getVehicleState()));
+            preparedStatement.setInt(8, vehicleParkDB.getVehicleType());
 
         } catch (SQLException e) {
             System.err.println("Exception during the statement execution" + e);
@@ -139,9 +139,9 @@ public class VehicleDao implements Dao {
 
         try (Statement statement = Connection.getConnection().createStatement()) {
 
-            statement.executeUpdate("INSERT INTO test_db.cargo_plane (idcargo_plane,name,licensePlate,color," +
-                    "passengers,yearOfManufacture,vehicleState) VALUES('5','CargoPlane: Rhinoceros beetle2','C222B'," +
-                    "'BLUE','122','1992','REPAIR')");
+            statement.executeUpdate("INSERT INTO test_db.vehicle_list  (id_vehicle_list,name,licensePlate,color," +
+                    "passengers,yearOfManufacture,vehicleState,vehicleType_fk) VALUES(default,'CargoPlane: Rhinoceros beetle2','C222B'," +
+                    "'BLUE','122','1992','REPAIR','1')");
 
         } catch (SQLException e) {
             System.err.println("Exception during the statement execution" + e);

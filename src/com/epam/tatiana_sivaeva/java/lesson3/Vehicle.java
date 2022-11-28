@@ -9,10 +9,10 @@ public abstract class Vehicle {
     private final Integer yearOfManufacture;
     private VehicleState vehicleState;
 
-    private String vehicleType;
+    private Integer vehicleType;
 
 
-    protected Vehicle(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture, VehicleState vehicleState,String vehicleType) {
+    protected Vehicle(String name, String licensePlate, Color color, Integer passengers, Integer yearOfManufacture, VehicleState vehicleState, Integer vehicleType) {
         this.name = name;
         this.licensePlate = licensePlate;
         this.color = color;
@@ -51,6 +51,14 @@ public abstract class Vehicle {
 
     public Integer getYearOfManufacture() {
         return yearOfManufacture;
+    }
+
+    public Integer getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(Integer vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
     public enum Color {YELLOW, RED, GREEN, BLUE, GRAY, CYAN, BLACK, MAGENTA}

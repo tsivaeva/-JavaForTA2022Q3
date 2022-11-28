@@ -13,14 +13,14 @@ public class VehiclePark {
     public VehiclePark() {
         vehiclesPark = new ArrayList<>();
 
-        CargoPlane cargoPlane1 = new CargoPlane("CargoPlane: Rhinoceros beetle", "C1111B", Vehicle.Color.BLUE, 120, 1990, Vehicle.VehicleState.REPAIR,"CargoPlane");
-        CargoPlane cargoPlane2 = new CargoPlane("CargoPlane: Scarab beetle", "C2222B", Vehicle.Color.BLACK, 100, 1950, Vehicle.VehicleState.REPAIR,"CargoPlane");
+        CargoPlane cargoPlane1 = new CargoPlane("CargoPlane: Rhinoceros beetle", "C1111B", Vehicle.Color.BLUE, 120, 1990, Vehicle.VehicleState.REPAIR,1);
+        CargoPlane cargoPlane2 = new CargoPlane("CargoPlane: Scarab beetle", "C2222B", Vehicle.Color.BLACK, 100, 1950, Vehicle.VehicleState.REPAIR,1);
 
-        LifeSavingPlane lifeSavingPlane1 = new LifeSavingPlane("LifeSavingPlane: Vgiik", "L111M", Vehicle.Color.RED, 10, 2000, Vehicle.VehicleState.REPAIR, "LifeSavingPlane");
-        LifeSavingPlane lifeSavingPlane2 = new LifeSavingPlane("LifeSavingPlane: Speed", "L222M", Vehicle.Color.RED, 8, 2001, Vehicle.VehicleState.REPAIR,"LifeSavingPlane");
+        LifeSavingPlane lifeSavingPlane1 = new LifeSavingPlane("LifeSavingPlane: Vgiik", "L111M", Vehicle.Color.RED, 10, 2000, Vehicle.VehicleState.REPAIR, 2);
+        LifeSavingPlane lifeSavingPlane2 = new LifeSavingPlane("LifeSavingPlane: Speed", "L222M", Vehicle.Color.RED, 8, 2001, Vehicle.VehicleState.REPAIR,2);
 
-        PassengerPlane passengerPlane1 = new PassengerPlane("PassengerPlane: GO home", "P111P", Vehicle.Color.YELLOW, 200, 2010, Vehicle.VehicleState.REPAIR,"PassengerPlane");
-        PassengerPlane passengerPlane2 = new PassengerPlane("PassengerPlane: GO home2", "P222P", Vehicle.Color.MAGENTA, 200, 2011, Vehicle.VehicleState.REPAIR,"PassengerPlane");
+        PassengerPlane passengerPlane1 = new PassengerPlane("PassengerPlane: GO home", "P111P", Vehicle.Color.YELLOW, 200, 2010, Vehicle.VehicleState.REPAIR,3);
+        PassengerPlane passengerPlane2 = new PassengerPlane("PassengerPlane: GO home2", "P222P", Vehicle.Color.MAGENTA, 200, 2011, Vehicle.VehicleState.REPAIR,3);
 
         passengerPlane2.changeVehicleState();
         lifeSavingPlane2.changeVehicleState();

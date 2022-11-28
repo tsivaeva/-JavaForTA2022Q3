@@ -1,4 +1,4 @@
-package com.epam.tatiana_sivaeva.java.lesson11;
+package com.epam.tatiana_sivaeva.java.lesson11.menu_options_DB;
 
 import com.epam.tatiana_sivaeva.java.lesson11.connection.Connection;
 
@@ -13,7 +13,7 @@ public class VehicleCreateDB {
             String sqlVehicleType = "CREATE TABLE IF NOT EXISTS `test_db`.`vehicle_type`(" +
                     "`id_VehicleType` INT NOT NULL AUTO_INCREMENT," +
                     "`vehicleType` VARCHAR(45) NOT NULL UNIQUE," +
-                    "PRIMARY KEY (`Id_VehicleType`));";
+                    "PRIMARY KEY (`id_VehicleType`));";
 
 
             String sqlVehicles = "CREATE TABLE IF NOT EXISTS `test_db`.`vehicle_list` (" +
@@ -24,10 +24,9 @@ public class VehicleCreateDB {
                     "  `passengers` INT NOT NULL," +
                     "  `yearOfManufacture` INT NOT NULL," +
                     "  `vehicleState` VARCHAR(45) NOT NULL," +
-                    "  `vehicleType` VARCHAR(45) NOT NULL," +
+                    "  `vehicleType_fk` INT NOT NULL," +
                     "    PRIMARY KEY (`id_vehicle_list`)," +
-                    "    FOREIGN KEY (`vehicleType`)  REFERENCES `test_db`.`vehicle_type`(`vehicleType`))";
-
+                    "    FOREIGN KEY (`vehicleType_fk`)  REFERENCES `test_db`.`vehicle_type`(`id_VehicleType`))";
 
             statement.executeUpdate(sqlVehicleType);
             System.out.println("VehicleType is created");

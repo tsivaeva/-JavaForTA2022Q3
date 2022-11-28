@@ -14,19 +14,23 @@ package com.epam.tatiana_sivaeva.java.lesson11.connection;
 //8.Create script to receive amount of records in all the tables
 //9.Create script to use any aggregated function
 
-import com.epam.tatiana_sivaeva.java.lesson11.VehicleAddRecordsDB;
-import com.epam.tatiana_sivaeva.java.lesson11.VehicleCreateDB;
 import com.epam.tatiana_sivaeva.java.lesson11.VehicleDao;
+import com.epam.tatiana_sivaeva.java.lesson11.VehicleParkDB;
+import com.epam.tatiana_sivaeva.java.lesson11.menu_options_DB.EnterVehicleDB;
 
 public class VehicleDemo {
     public static void main(String[] args) {
 // 1
         VehicleDao vehicleDao = new VehicleDao();
-        VehicleCreateDB vehicleCreateDB = new VehicleCreateDB();
-        vehicleCreateDB.createTables();
-        //2
-        VehicleAddRecordsDB vehicleAddRecordsDB = new VehicleAddRecordsDB();
-        vehicleAddRecordsDB.addRecords();
+//        VehicleCreateDB vehicleCreateDB = new VehicleCreateDB();
+//        vehicleCreateDB.createTables();
+//        //2
+//        VehicleAddRecordsDB vehicleAddRecordsDB = new VehicleAddRecordsDB();
+//        vehicleAddRecordsDB.addRecords();
+        System.out.println("VALUES(default,'CargoPlane: 3','C333B','BLUE',133,1992,'REPAIR',(SELECT id_VehicleType FROM test_db.vehicle_type WHERE vehicleType = 'CargoPlane')");
+      //  VehicleParkDB vehicleParkDBadd = new VehicleParkDB()
+        //EnterVehicleDB.main();
+        vehicleDao.add(EnterVehicleDB.main());
 
         vehicleDao.getall().stream().forEach(System.out::print);
 //3.Create update script to update a value in a record by specific parameter
