@@ -47,26 +47,31 @@ public class VehicleDao implements Dao {
     }
 
     @Override
-    public CargoPlane get(int id, String name) {
-        String sql = "SELECT * FROM test_db.cargo_plane WHERE id=? and name=? ";
-        CargoPlane cargoPlane = null;
+    public Object get(int id, String city) {
+        return null;
+    }
+
+    // @Override
+    public List<VehicleParkDB> getBETWEEN(int fromN, int toN) {
+        String sql = "SELECT * FROM test_db.vehicle_list WHERE passengers BETWEEN " + fromN + " AND " + toN + ";";
+        List<VehicleParkDB> vehicleParkDBListBETWEEN = new ArrayList<>();
 
         try (PreparedStatement statement = Connection.getConnection().prepareStatement(sql)) {
 
-            statement.setInt(1, id);
-            statement.setString(2, name);
+            statement.setInt(1, fromN);
+            statement.setInt(2, toN);
 
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                cargoPlane = new CargoPlane(
+                vehicleParkDBListBETWEEN.add(new VehicleParkDB(
                         resultSet.getString(2).trim(),
                         resultSet.getString(3).trim(),
                         Enum.valueOf(Vehicle.Color.class, resultSet.getString(4).trim()),
                         resultSet.getInt(5),
                         resultSet.getInt(6),
                         Enum.valueOf(Vehicle.VehicleState.class, resultSet.getString(7).trim()),
-                        resultSet.getInt(8));
+                        resultSet.getInt(8)));
             }
             resultSet.close();
 
@@ -75,7 +80,7 @@ public class VehicleDao implements Dao {
         }
         Connection.close();
 
-        return cargoPlane;
+        return vehicleParkDBListBETWEEN;
     }
 
     @Override
