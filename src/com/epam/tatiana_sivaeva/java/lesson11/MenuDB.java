@@ -31,7 +31,7 @@ public class MenuDB {
 
         try {
             int a;
-            System.out.print("Menu has 7 options \n"
+            System.out.print("Menu has 9 options \n"
                     + "Enter the number for one of them: \n"
                     + "1 is Create tables in DB \n"
                     + "2 is Create insert script to add records \n"
@@ -39,7 +39,7 @@ public class MenuDB {
                     + "4 is Create script to delete records by specific column \n"
                     + "5 is Create script to delete all the records in the table \n"
                     + "-6 is Create script to get records from at able using between \n"
-                    + "-7 is Create script to receive records from all the 3 tables(join)ordered by any column \n"
+                    + "-+7 is Create script to receive records from all the 3 tables(join)ordered by any column \n"
                     + "8 is Create script to receive amount of records in all the tables \n"
                     + "9 is Create script to use any aggregated function(max passengers)" + "\n");
 
@@ -130,6 +130,7 @@ public class MenuDB {
                 vehicleDao.getall().stream().forEach(System.out::print);
 
             } else if (a == 7) {
+                //SELECT * FROM `test_db`.`vehicle_list` RIGHT JOIN `test_db`.vehicle_type ON vehicleType_fk =id_VehicleType;
 
             } else if (a == 8) {
 
